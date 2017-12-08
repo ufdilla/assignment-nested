@@ -1,26 +1,33 @@
-/**
- * nested
- */
-public class nested 
-{
+public class nested {
 
-    private String nama;
-    private int usia;
-    
-    public nested(String nama, int usia) 
-    {
-        this.nama = nama;
-        this.usia = usia;
+    private class user {
+        private String nama = "umi";
+        private int usia = 17;
+
+        // private void proses() {
+        //     System.out.println("Nama Saya: " + nama);
+        //     System.out.println("Usia Saya: " + usia);
+        // }
     }
 
-    public String getNama() 
-    {
-        return nama;
+    private class alamat {
+        private String jalan = "raya pondok kelapa";
+        private int nomor = 3;
+
+        // private void prosesJl() {
+        //     System.out.println("Jalan : " + jalan);
+        //     System.out.println("Nomor : " + nomor);
+        // }
     }
 
-    public int getUsia() 
-    {
-        return usia;
-    }
+    public static void main(String[] args) {
+        nested result = new nested();
+        
+        nested.user dataUser = result.new user();
+        
+        nested.alamat dataAlamat = result.new alamat();
 
+        // dataUser.proses();
+        // dataAlamat.prosesJl();
+    }
 }
